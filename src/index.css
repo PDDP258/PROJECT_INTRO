@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #fdf6e3;
+    --color-surface: #0d0e10;
+    --color-text-main: #141414;
+    --color-text-muted: #7a7a7a;
+    --color-accent-terracotta: #b85c48;
+    --color-accent-paper: #c9c1b5;
+
+    --background: 43 87% 95%;
+    --foreground: 0 0% 8%;
+    --card: 43 87% 95%;
+    --card-foreground: 0 0% 8%;
+    --popover: 43 87% 95%;
+    --popover-foreground: 0 0% 8%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 43 87% 95%;
+    --secondary: 35 18% 78%;
+    --secondary-foreground: 0 0% 8%;
+    --muted: 35 18% 78%;
+    --muted-foreground: 0 0% 48%;
+    --accent: 14 43% 50%;
+    --accent-foreground: 43 87% 95%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 48%;
+    --input: 35 18% 78%;
+    --ring: 14 43% 50%;
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    font-family: 'JetBrains Mono', 'SF Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif SC', 'Songti SC', serif;
+    word-break: keep-all;
+  }
+}
+
+/* ===== 3D Hero Layer Animations ===== */
+@keyframes animate-layer-1 {
+  0% { transform: translate3d(0, 0, -500px); }
+  100% { transform: translate3d(-200px, -100px, -500px); }
+}
+
+@keyframes animate-layer-2 {
+  0% { transform: translate3d(0, 0, -300px); }
+  100% { transform: translate3d(200px, 150px, -300px); }
+}
+
+@keyframes animate-layer-3 {
+  0% { transform: translate3d(0, 0, -100px); }
+  100% { transform: translate3d(-100px, 50px, -100px); }
+}
+
+@keyframes animate-layer-4 {
+  0% { transform: translate3d(0, 0, 0px); }
+  100% { transform: translate3d(150px, -80px, 0px); }
+}
+
+@keyframes animate-layer-5 {
+  0% { transform: translate3d(0, 0, 100px); }
+  100% { transform: translate3d(-250px, 120px, 100px); }
+}
+
+/* ===== Track Scroll Animations ===== */
+@keyframes track-scroll-forward {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+
+@keyframes track-scroll-reverse {
+  0% { transform: translate3d(-100%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* ===== Background Shift ===== */
+@keyframes shift-background {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
+}
+
+/* ===== Cursor Blink ===== */
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ===== Scroll Reveal ===== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
